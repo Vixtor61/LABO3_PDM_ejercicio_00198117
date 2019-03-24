@@ -12,7 +12,7 @@
         android:layout_weight="2"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="@dimen/weight">
     <EditText
         android:layout_marginTop="@dimen/standard_margin"
         android:textSize="@dimen/text_size"
@@ -20,14 +20,14 @@
         android:layout_weight="1"
         android:id="@+id/user_name"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="@dimen/weight" />
     <EditText
         android:textSize="@dimen/text_size"
         android:hint="@string/password"
         android:layout_weight="1"
         android:id="@+id/user_password"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="@dimen/weight" />
     <EditText
         android:textSize="@dimen/text_size"
         android:inputType="textEmailAddress"
@@ -35,9 +35,9 @@
         android:layout_weight="1"
         android:id="@+id/user_email"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="@dimen/weight" />
         <TextView
-            android:layout_weight="0"
+            android:layout_weight="0.1"
             android:id="@+id/tv_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,11 +66,11 @@
         android:layout_weight="2"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="@dimen/weight">
         <Button
             android:id="@+id/btn_send"
             android:layout_marginTop="48dp"
-            android:textSize="32sp"
+            android:textSize="@dimen/text_size"
             android:text="Send"
             android:textAllCaps="false"
             android:layout_width="wrap_content"

@@ -10,6 +10,7 @@ import com.example.intent.utils.AppConstants;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 public class ShareActivity extends AppCompatActivity {
     private TextView mTv_name,mTv_password,mTv_email,mTv_gender;
@@ -28,23 +29,23 @@ public class ShareActivity extends AppCompatActivity {
             mTv_password.setText(mUserInfo[1]);
             mTv_email.setText(mUserInfo[2]);
             mTv_gender.setText(mUserInfo[3]);
-            /*
-            JSONObject User = new JSONObject();
+
+            JSONObject mUser = new JSONObject();
             try {
-                User.put("Username",mUserInfo[0]);
-                User.put("Password",mUserInfo[1]);
-                User.put("Email",mUserInfo[2]);
-                User.put("Gender",mUserInfo[3]);
+                mUser.put("Username",mUserInfo[0]);
+                mUser.put("Password",mUserInfo[1]);
+                mUser.put("Email",mUserInfo[2]);
+                mUser.put("Gender",mUserInfo[3]);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-*/
+
 
             mBtn_share.setOnClickListener(v->{
                 Intent mIntentButton = new Intent();
                 mIntentButton.setAction(Intent.ACTION_SEND);
                 mIntentButton.setType("text/plain");
-                mIntentButton.putExtra(Intent.EXTRA_TEXT,mUserInfo[0]+ " " + mUserInfo[1]+ " " + mUserInfo[2] + " " + mUserInfo[3]);
+                mIntentButton.putExtra(Intent.EXTRA_TEXT, mUser.toString());
                 startActivity(mIntentButton);
             });
 
